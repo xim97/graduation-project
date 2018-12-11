@@ -1,3 +1,14 @@
+@keyframes blowYourEyes{
+  0% {
+    background-color: red;
+    transform: rotate(0deg);
+  }
+  100% {
+    background-color: yellow;
+    transform: rotate(359deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +18,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-.App a {
-  align-self: center;
 }
 
 .search-section {
@@ -31,22 +38,6 @@
 .search-section input[type="text"] {
   width: 100%;
   outline: none;
-}
-
-#dropdown {
-  border: 2px solid white;
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;    
-  flex-wrap: wrap;
-  position: absolute;
-  z-index: 9999;
-  background-color: white;
-}
-
-#dropdown .entity {
-  border: none;
 }
 
 .pick-section {

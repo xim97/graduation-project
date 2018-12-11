@@ -4,6 +4,13 @@ import ItemsContainer from "../components/ItemsContainer";
 import Switcher from "../components/Switcher";
 import { connect } from "react-redux";
 import loadItems from "../utils/loadItems";
+import styled from "styled-components";
+
+const StyledLink = styled.div`
+    animation: blowYourEyes  0.1s infinite;
+    align-self: center;
+    margin: 50px 0;
+`;
 
 class ContentPage extends Component {
     constructor(props) {
@@ -18,7 +25,7 @@ class ContentPage extends Component {
     render() {
         return (
             <div className="App">
-                <a href="/saved/favourites">favourite items</a>
+                <StyledLink><a href="/saved/favourites">favourite items</a></StyledLink>                
                 <SearchComponent />
                 <Switcher />
                 <ItemsContainer />
@@ -35,7 +42,7 @@ export default connect(
                 type: "SET_INPUT",
                 searchInput: input
             })
-        },       
+        },
         getItems: () =>
             dispatch(loadItems)
     })

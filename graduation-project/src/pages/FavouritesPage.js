@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Item from "../components/Item";
+import styled from "styled-components";
+
+const StyledLink = styled.div`
+    animation: blowYourEyes  0.1s infinite;
+    margin: 30px 0;
+`;
 
 class FavouritesPage extends Component {
     constructor(props) {
@@ -31,15 +37,16 @@ class FavouritesPage extends Component {
     render() {
         return (
             <div id="content" className="content">
-                <a href="/">main page</a>
+                <StyledLink><a href="/">main page</a></StyledLink>
+                
                 {
-                    this.props.favouriteItems.length > 0 ? 
-                    this.props.favouriteItems.slice(0, (this.props.page + 1) * 5).map(item =>
-                        <Item
-                            item={item}
-                            key={item.id}
-                        />
-                    ) : <p>Nothing to show</p>
+                    this.props.favouriteItems.length > 0 ?
+                        this.props.favouriteItems.slice(0, (this.props.page + 1) * 5).map(item =>
+                            <Item
+                                item={item}
+                                key={item.id}
+                            />
+                        ) : <p>Nothing to show</p>
                 }
             </div>
         );
