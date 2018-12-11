@@ -3,6 +3,7 @@ import SearchComponent from "../components/SearchComponent";
 import ItemsContainer from "../components/ItemsContainer";
 import Switcher from "../components/Switcher";
 import { connect } from "react-redux";
+import loadItems from "../utils/loadItems";
 
 class ContentPage extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class ContentPage extends Component {
 
         if (this.props.match.params.request !== undefined) {
             this.props.setInput(this.props.match.params.request);
+            this.props.getItems();
         }
     }
 
@@ -33,6 +35,8 @@ export default connect(
                 type: "SET_INPUT",
                 searchInput: input
             })
-        }
+        },       
+        getItems: () =>
+            dispatch(loadItems)
     })
 )(ContentPage);

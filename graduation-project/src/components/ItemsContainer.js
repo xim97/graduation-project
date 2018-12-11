@@ -23,10 +23,7 @@ class ItemsContainer extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleItemsContainerScroll);
-        if (this.props.searchInput !== "") {
-            this.props.getItems();
-        }
+        window.addEventListener('scroll', this.handleItemsContainerScroll);        
     }
 
     componentWillUnmount() {
