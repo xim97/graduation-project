@@ -15,7 +15,7 @@ class ItemsContainer extends Component {
             let lastDiv = document.querySelector("#content > div:last-child"),
                 lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
                 pageOffset = window.pageYOffset + window.innerHeight;
-            if (pageOffset > lastDivOffset - 1000) {
+            if (pageOffset > lastDivOffset - 600) {
                 this.props.nextPage();
                 this.props.getItems();
             }

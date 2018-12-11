@@ -7,7 +7,7 @@ export default class GifsPage extends Component {
     render() {
         return (
             <div className="App">               
-                <a href="/favourites">fav</a>
+                <a href="/favourites">favourite items</a>
                 <SearchComponent />
                 <Switcher />
                 <ItemsContainer />
