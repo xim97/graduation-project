@@ -9,6 +9,10 @@
   justify-content: flex-start;
 }
 
+.App a {
+  align-self: center;
+}
+
 .search-section {
   width: 100%;
   align-self: center;

@@ -24,6 +24,9 @@ class ItemsContainer extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleItemsContainerScroll);
+        if (this.props.searchInput !== "") {
+            this.props.getItems();
+        }
     }
 
     componentWillUnmount() {
@@ -55,7 +58,8 @@ class ItemsContainer extends Component {
 export default connect(
     store => ({
         items: store.items,
-        isLoading: store.isLoading
+        isLoading: store.isLoading,
+        searchInput: store.searchInput
     }),
     dispatch => ({
         nextPage: () =>

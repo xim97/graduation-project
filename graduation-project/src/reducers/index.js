@@ -41,8 +41,8 @@ export const rootReducer = combineReducers({
         return state;
     },
     favouriteItems: (state = JSON.parse(localStorage.getItem("favourites")) || [], action) => {        
-        if (action.type === "ADD_ITEM") {
-            state.push(action.item);
+        if (action.type === "ADD_ITEM") {            
+            state.unshift(action.item)
             localStorage.setItem("favourites", JSON.stringify(state));
             return [
                 ...state

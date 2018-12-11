@@ -31,15 +31,18 @@ class SearchComponent extends Component {
                         value={this.props.searchInput}
                         onChange={this.handleSearchInputChange}
                     />
-                    <div id="dropdown">
-                    </div>
                 </div>
-                <input
-                    type="button"
-                    id="search-button"
-                    value="Найти"
-                    onClick={this.handleSearchButtonClick}
-                />
+                <a
+                    href={"/" + this.props.searchInput}
+                >
+                    <input
+                        type="button"
+                        id="search-button"
+                        value="Найти"
+                        onClick={this.handleSearchButtonClick}
+                    />
+                </a>
+
             </div>
         );
     }

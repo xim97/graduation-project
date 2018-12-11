@@ -9,8 +9,8 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={ContentPage} />   
-          <Route exact path="/favourites" component={FavouritesPage} />      
+          <Route exact path="/:request?" component={ContentPage} />   
+          <Route exact path="/saved/favourites" component={FavouritesPage} />      
         </Switch>
       </BrowserRouter>
     );

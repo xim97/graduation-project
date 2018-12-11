@@ -33,12 +33,13 @@ class FavouritesPage extends Component {
             <div id="content" className="content">
                 <a href="/">main page</a>
                 {
+                    this.props.favouriteItems.length > 0 ? 
                     this.props.favouriteItems.slice(0, (this.props.page + 1) * 5).map(item =>
                         <Item
                             item={item}
                             key={item.id}
                         />
-                    )
+                    ) : <p>Nothing to show</p>
                 }
             </div>
         );
