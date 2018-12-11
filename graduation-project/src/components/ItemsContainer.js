@@ -10,14 +10,14 @@ class ItemsContainer extends Component {
         this.handleItemsContainerScroll = this.handleItemsContainerScroll.bind(this);
     }
 
-    handleItemsContainerScroll(event) {
+    handleItemsContainerScroll() {
         if (!this.props.isLoading && this.props.items.length > 0) {
             let lastDiv = document.querySelector("#content > div:last-child"),
                 lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
                 pageOffset = window.pageYOffset + window.innerHeight;
-            if (pageOffset > lastDivOffset - 1000) {                
+            if (pageOffset > lastDivOffset - 1000) {
                 this.props.nextPage();
-                this.props.getItems();                
+                this.props.getItems();
             }
         }
     }
@@ -37,9 +37,12 @@ class ItemsContainer extends Component {
                 className="content"
             >
                 {
-                    this.props.items.map(item => {
-                        return (<Item item={item} key={item.id} />);
-                    })
+                    this.props.items.map(item =>
+                        <Item
+                            item={item}
+                            key={item.id}
+                        />
+                    )
                 }
                 {
                     this.props.isLoading && <p>Loading...</p>
